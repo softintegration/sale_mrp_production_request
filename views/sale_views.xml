@@ -6,6 +6,20 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="oe_stat_button" name="show_related_production_requests" icon="fa-wrench"
+                            groups="mrp_production_request.group_mrp_production_request_user" type="object"
+                            attrs="{'invisible':[('production_request_ids_count','=',0)]}">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="production_request_ids_count"/>
+                            </span>
+                            <span>
+                                Manufacturing Requests
+                            </span>
+                        </div>
+                    </button>
+                </xpath>
                 <xpath expr="//field[@name='state']" position="before">
                     <field name="can_create_production_request" invisible="1"/>
                     <button name="action_create_production_requests"

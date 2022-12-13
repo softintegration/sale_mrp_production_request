@@ -16,6 +16,17 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: sale_mrp_production_request
+#: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.view_order_form_inherited
+msgid ""
+"<span>\n"
+"                                Manufacturing Requests\n"
+"                            </span>"
+msgstr ""
+"<span>\n"
+"                                Demandes de fabrication\n"
+"                            </span>"
+
+#. module: sale_mrp_production_request
 #: code:addons/sale_mrp_production_request/wizard/production_requests_create.py:23
 #, python-format
 msgid "At least one line must be selected!"
@@ -207,3 +218,9 @@ msgstr "Client"
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_request__client_order_ref
 msgid "Customer Reference"
 msgstr "Référence commande client"
+
+#. module: sale_mrp_production_request
+#: code:addons/sale_mrp_production_request/models/sale_order.py:57
+#, python-format
+msgid "Manufacturing Requests"
+msgstr "Demandes de fabrication"
