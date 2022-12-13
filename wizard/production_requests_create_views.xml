@@ -19,7 +19,8 @@
                                 <field name="checked"/>
                                 <field name="product_id" readonly="1"/>
                                 <field name="quantity" readonly="1"/>
-                                <field name="quantity_to_do"/>
+                                <field name="quantity_to_do" decoration-success="(quantity_to_do &lt;= quantity)"
+                                       decoration-danger="(quantity_to_do &gt; quantity)"/>
                                 <field name="product_uom_id" readonly="1"/>
                                 <field name="date_desired" required="1"/>
                             </tree>

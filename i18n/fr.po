@@ -87,6 +87,12 @@ msgstr "Date souhaitée"
 #. module: sale_mrp_production_request
 #: code:addons/sale_mrp_production_request/wizard/production_requests_create.py:29
 #, python-format
+msgid "Quantity to do must be less than or equal to Quantity to plan!"
+msgstr "Quantité à planifier doit être inférieure ou égale au Reste à planifier!"
+
+#. module: sale_mrp_production_request
+#: code:addons/sale_mrp_production_request/wizard/production_requests_create.py:31
+#, python-format
 msgid "Desired Date is required!"
 msgstr "Date souhaitée obligatoire!"
 

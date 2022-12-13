@@ -25,6 +25,8 @@ class ProductionRequestsCreate(models.TransientModel):
         for item in self.item_ids.filtered(lambda it:it.checked):
             if float_compare(item.quantity_to_do,0.0, precision_rounding=item.product_uom_id.rounding) <=0:
                 raise ValidationError(_('Quantity to do must be positive!'))
+            if float_compare(item.quantity_to_do,item.sale_line_id.qty_to_plan, precision_rounding=item.product_uom_id.rounding) >0:
+                raise ValidationError(_('Quantity to do must be less than or equal to Quantity to plan!'))
             if not item.date_desired:
                 raise ValidationError(_('Desired Date is required!'))
             production_requests_dict_list.append(self._prepare_production_request(item))
