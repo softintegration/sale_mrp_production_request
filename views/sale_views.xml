@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="view_order_form_inherited" model="ir.ui.view">
+            <field name="name">view.order.form.inherited</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="before">
+                    <field name="can_create_production_request" invisible="1"/>
+                    <button name="action_create_production_requests"
+                            type="object"
+                            data-hotkey="shift+r" string="Create Production Requests"
+                            class="oe_highlight"
+                            attrs="{'invisible':[('can_create_production_request','=',False)]}"
+                            groups="mrp_production_request.group_mrp_production_request_user"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form/group/group/div[@name='ordered_qty']" position="after">
+                    <label for="qty_to_plan" string="Still to plan" attrs="{'invisible': [('parent.state', 'not in', ['sale', 'done'])]}"/>
+                    <div name="qty_to_plan" attrs="{'invisible': [('parent.state', 'not in', ['sale', 'done'])]}">
+                        <field name="qty_to_plan"/>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom_qty']" position="after">
+                    <field name="qty_to_plan"
+                           decoration-info="(qty_to_plan > 0)" decoration-bf="(qty_to_plan == 0)"
+                           attrs="{'column_invisible': [('parent.state', 'not in', ['sale', 'done'])]}"
+                           optional="show"
+                    />
+                </xpath>
+            </field>
+        </record>
+
+</odoo>

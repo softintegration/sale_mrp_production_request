@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_production_requests_create" model="ir.ui.view">
+            <field name="name">production.requests.create.form</field>
+            <field name="model">production.requests.create</field>
+            <field name="arch" type="xml">
+                <form string="Create Production Requests">
+                    <group name="wizard_header">
+                        <div name="check_all">
+                            <field name="check_all" class="oe_inline"/>
+                            <label for="check_all" class="oe_inline"/>
+                        </div>
+                    </group>
+                    <group name="item_ids">
+                        <field name="item_ids" nolabel="1">
+                            <tree create="0" delete="0" editable="bottom">
+                                <field name="sale_line_id" invisible="1"/>
+                                <field name="request_id" invisible="1"/>
+                                <field name="checked"/>
+                                <field name="product_id" readonly="1"/>
+                                <field name="quantity" readonly="1"/>
+                                <field name="quantity_to_do"/>
+                                <field name="product_uom_id" readonly="1"/>
+                                <field name="date_desired" required="1"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button string='Confirm' name="apply" type="object" class="btn-primary" data-hotkey="q"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                    </footer>
+               </form>
+            </field>
+        </record>
+
+        <record id="action_view_production_requests_create" model="ir.actions.act_window">
+            <field name="name">Create Production Requests</field>
+            <field name="res_model">production.requests.create</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_production_requests_create"/>
+            <field name="target">new</field>
+        </record>
+</odoo>
