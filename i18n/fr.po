@@ -196,3 +196,14 @@ msgstr ""
 #: model:ir.model,name:sale_mrp_production_request.model_production_requests_create_item
 msgid "production.requests.create.item"
 msgstr ""
+
+#. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_request__partner_id
+#: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.mrp_production_request_filter_view_inherited
+msgid "Customer"
+msgstr "Client"
+
+#. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_request__client_order_ref
+msgid "Customer Reference"
+msgstr "Référence commande client"

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="mrp_production_request_form_view_inherited" model="ir.ui.view">
+            <field name="name">mrp.production.request.form.view.inherited</field>
+            <field name="model">mrp.production.request</field>
+            <field name="inherit_id" ref="mrp_production_request.mrp_production_request_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="before">
+                    <field name="partner_id"/>
+                    <field name="client_order_ref"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mrp_production_request_tree_view_inherited" model="ir.ui.view">
+            <field name="name">mrp.production.request.tree.view.inherited</field>
+            <field name="model">mrp.production.request</field>
+            <field name="inherit_id" ref="mrp_production_request.mrp_production_request_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="client_order_ref"/>
+                    <field name="partner_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mrp_production_request_filter_view_inherited" model="ir.ui.view">
+            <field name="name">mrp.production.request.filter.view.inherited</field>
+            <field name="model">mrp.production.request</field>
+            <field name="inherit_id" ref="mrp_production_request.mrp_production_request_filter_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="before">
+                    <field name="partner_id"/>
+                    <field name="client_order_ref"/>
+                </xpath>
+                <xpath expr="//filter[@name='status']" position="after">
+                    <filter string="Customer" name="partner_id" domain="[]" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Sale Order" name="sale_id" domain="[]" context="{'group_by': 'sale_id'}"/>
+                </xpath>
+            </field>
+        </record>
+
+
+</odoo>

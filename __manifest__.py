@@ -10,13 +10,14 @@
     'qweb': [],
     'description': False,
     'images': [],
-    'version': '1.0.1.1',
+    'version': '1.0.1.2',
     'category': 'Sale/Manufacturing',
     'demo': [],
     'depends': ['sale','mrp_production_request'],
     'data': [
         'security/ir.model.access.csv',
         'views/sale_views.xml',
+        'views/mrp_production_request_views.xml',
         'wizard/production_requests_create_views.xml'
     ],
     'license': 'LGPL-3',
