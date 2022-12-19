@@ -18,7 +18,7 @@
             <field name="model">mrp.production.request</field>
             <field name="inherit_id" ref="mrp_production_request.mrp_production_request_tree_view"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='name']" position="after">
+                <xpath expr="//field[@name='date_request']" position="after">
                     <field name="client_order_ref"/>
                     <field name="partner_id"/>
                 </xpath>
