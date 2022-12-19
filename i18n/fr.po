@@ -18,13 +18,18 @@ msgstr ""
 #. module: sale_mrp_production_request
 #: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.view_order_form_inherited
 msgid ""
-"<span>\n"
-"                                Manufacturing Requests\n"
+"<span class=\"o_stat_text\">\n"
+"                                Requests\n"
 "                            </span>"
 msgstr ""
-"<span>\n"
-"                                Demandes de fabrication\n"
+"<span class=\"o_stat_text\">\n"
+"                                Fabrication\n"
 "                            </span>"
+
+#. module: sale_mrp_production_request
+#: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.view_order_form_inherited
+msgid "Manufacturing"
+msgstr "Demandes de "
 
 #. module: sale_mrp_production_request
 #: code:addons/sale_mrp_production_request/wizard/production_requests_create.py:23
