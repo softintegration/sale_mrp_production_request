@@ -16,6 +16,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: sale_mrp_production_request
+#: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.sale_order_line_view_form_readonly_inherited
 #: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.view_order_form_inherited
 msgid ""
 "<span class=\"o_stat_text\">\n"
@@ -27,6 +28,7 @@ msgstr ""
 "                            </span>"
 
 #. module: sale_mrp_production_request
+#: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.sale_order_line_view_form_readonly_inherited
 #: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.view_order_form_inherited
 msgid "Manufacturing"
 msgstr "Demandes de "

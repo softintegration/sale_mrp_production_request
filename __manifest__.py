@@ -10,10 +10,10 @@
     'qweb': [],
     'description': False,
     'images': [],
-    'version': '1.0.1.7',
+    'version': '1.0.1.8',
     'category': 'Sale/Manufacturing',
     'demo': [],
-    'depends': ['sale','mrp_production_request'],
+    'depends': ['sale_order_line_form_button_box','mrp_production_request'],
     'data': [
         'security/ir.model.access.csv',
         'views/sale_views.xml',

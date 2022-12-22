@@ -46,4 +46,27 @@
             </field>
         </record>
 
+        <record id="sale_order_line_view_form_readonly_inherited" model="ir.ui.view">
+            <field name="name">sale.order.line.view.form.readonly.inherited.inherited</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="sale_order_line_form_button_box.sale_order_line_view_form_readonly_inherited"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="oe_stat_button" name="show_related_production_requests" icon="fa-list"
+                            groups="mrp_production_request.group_mrp_production_request_user" type="object"
+                            attrs="{'invisible':[('production_request_ids_count','=',0)]}">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="production_request_ids_count" class="mr4"/>
+                                Manufacturing
+                            </span>
+                            <span class="o_stat_text">
+                                Requests
+                            </span>
+                        </div>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
 </odoo>
