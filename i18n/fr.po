@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-13 10:38+0000\n"
-"PO-Revision-Date: 2022-12-13 10:38+0000\n"
+"POT-Creation-Date: 2023-01-23 06:38+0000\n"
+"PO-Revision-Date: 2023-01-23 06:38+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,13 +28,7 @@ msgstr ""
 "                            </span>"
 
 #. module: sale_mrp_production_request
-#: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.sale_order_line_view_form_readonly_inherited
-#: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.view_order_form_inherited
-msgid "Manufacturing"
-msgstr "Demandes de "
-
-#. module: sale_mrp_production_request
-#: code:addons/sale_mrp_production_request/wizard/production_requests_create.py:23
+#: code:addons/sale_mrp_production_request/wizard/production_requests_create.py:0
 #, python-format
 msgid "At least one line must be selected!"
 msgstr "Aucune ligne n'est sélectionnée!"
@@ -43,7 +37,7 @@ msgstr "Aucune ligne n'est sélectionnée!"
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_sale_order__can_create_production_request
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_sale_order_line__can_create_production_request
 msgid "Can Create Production Request"
-msgstr ""
+msgstr "Peut créer demande de fabrication"
 
 #. module: sale_mrp_production_request
 #: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.view_production_requests_create
@@ -66,7 +60,7 @@ msgid "Confirm"
 msgstr "Confirmer"
 
 #. module: sale_mrp_production_request
-#: code:addons/sale_mrp_production_request/models/sale_order.py:40
+#: code:addons/sale_mrp_production_request/models/sale_order.py:0
 #: model:ir.actions.act_window,name:sale_mrp_production_request.action_view_production_requests_create
 #: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.view_order_form_inherited
 #: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.view_production_requests_create
@@ -87,18 +81,23 @@ msgid "Created on"
 msgstr ""
 
 #. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_request__partner_id
+#: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.mrp_production_request_filter_view_inherited
+msgid "Customer"
+msgstr "Client"
+
+#. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_request__client_order_ref
+msgid "Customer Reference"
+msgstr "Référence commande client"
+
+#. module: sale_mrp_production_request
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create_item__date_desired
 msgid "Desired Date"
 msgstr "Date souhaitée"
 
 #. module: sale_mrp_production_request
-#: code:addons/sale_mrp_production_request/wizard/production_requests_create.py:29
-#, python-format
-msgid "Quantity to do must be less than or equal to Quantity to plan!"
-msgstr "Quantité à planifier doit être inférieure ou égale au Reste à planifier!"
-
-#. module: sale_mrp_production_request
-#: code:addons/sale_mrp_production_request/wizard/production_requests_create.py:31
+#: code:addons/sale_mrp_production_request/wizard/production_requests_create.py:0
 #, python-format
 msgid "Desired Date is required!"
 msgstr "Date souhaitée obligatoire!"
@@ -139,9 +138,23 @@ msgid "Last Updated on"
 msgstr ""
 
 #. module: sale_mrp_production_request
+#: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.sale_order_line_view_form_readonly_inherited
+#: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.view_order_form_inherited
+msgid "Manufacturing"
+msgstr "Demandes de "
+
+#. module: sale_mrp_production_request
 #: model:ir.model,name:sale_mrp_production_request.model_mrp_production_request
 msgid "Manufacturing Request"
 msgstr "Demande de fabrication"
+
+#. module: sale_mrp_production_request
+#: code:addons/sale_mrp_production_request/models/sale_order.py:0
+#: code:addons/sale_mrp_production_request/models/sale_order_line.py:0
+#: model:ir.ui.menu,name:sale_mrp_production_request.menu_production_request
+#, python-format
+msgid "Manufacturing Requests"
+msgstr "Demandes de fabrication"
 
 #. module: sale_mrp_production_request
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create_item__product_id
@@ -154,15 +167,16 @@ msgid "Product Unit of Measure"
 msgstr "Unité de mesure de l'article"
 
 #. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_sale_order__production_request_ids_count
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_sale_order_line__production_request_ids_count
+msgid "Production Request Ids Count"
+msgstr ""
+
+#. module: sale_mrp_production_request
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_sale_order__production_request_ids
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_sale_order_line__production_request_ids
 msgid "Production Requests"
 msgstr "Demandes de fabrication"
-
-#. module: sale_mrp_production_request
-#: model:ir.model.fields,field_description:sale_mrp_production_request.field_sale_order_line__qty_to_plan
-msgid "Qty to plan"
-msgstr "Reste à planifier"
 
 #. module: sale_mrp_production_request
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create_item__quantity_to_do
@@ -170,25 +184,38 @@ msgid "Quantity to do"
 msgstr "Qté à planifier"
 
 #. module: sale_mrp_production_request
-#: code:addons/sale_mrp_production_request/wizard/production_requests_create.py:27
+#: code:addons/sale_mrp_production_request/wizard/production_requests_create.py:0
+#, python-format
+msgid "Quantity to do must be less than or equal to Quantity to plan!"
+msgstr ""
+"Quantité à planifier doit être inférieure ou égale au Reste à planifier!"
+
+#. module: sale_mrp_production_request
+#: code:addons/sale_mrp_production_request/wizard/production_requests_create.py:0
 #, python-format
 msgid "Quantity to do must be positive!"
 msgstr "La quantité à planifier doit être positive"
 
 #. module: sale_mrp_production_request
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create_item__quantity
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_sale_order_line__qty_to_plan
 msgid "Quantity to plan"
 msgstr "Reste à planifier"
 
 #. module: sale_mrp_production_request
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create_item__request_id
 msgid "Request"
-msgstr ""
+msgstr "Demande de fabrication"
 
 #. module: sale_mrp_production_request
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_request__sale_line_id
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create_item__sale_line_id
 msgid "Sale Line"
+msgstr ""
+
+#. module: sale_mrp_production_request
+#: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.mrp_production_request_filter_view_inherited
+msgid "Sale Order"
 msgstr ""
 
 #. module: sale_mrp_production_request
@@ -212,6 +239,11 @@ msgid "Still to plan"
 msgstr "Reste à planifier"
 
 #. module: sale_mrp_production_request
+#: model:ir.ui.menu,name:sale_mrp_production_request.menu_to_produce
+msgid "To produce"
+msgstr "À fabriquer"
+
+#. module: sale_mrp_production_request
 #: model:ir.model,name:sale_mrp_production_request.model_production_requests_create
 msgid "production.requests.create"
 msgstr ""
@@ -220,20 +252,3 @@ msgstr ""
 #: model:ir.model,name:sale_mrp_production_request.model_production_requests_create_item
 msgid "production.requests.create.item"
 msgstr ""
-
-#. module: sale_mrp_production_request
-#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_request__partner_id
-#: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.mrp_production_request_filter_view_inherited
-msgid "Customer"
-msgstr "Client"
-
-#. module: sale_mrp_production_request
-#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_request__client_order_ref
-msgid "Customer Reference"
-msgstr "Référence commande client"
-
-#. module: sale_mrp_production_request
-#: code:addons/sale_mrp_production_request/models/sale_order.py:57
-#, python-format
-msgid "Manufacturing Requests"
-msgstr "Demandes de fabrication"

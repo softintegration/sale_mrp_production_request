@@ -69,4 +69,13 @@
             </field>
         </record>
 
+        <menuitem id="menu_to_produce"
+            name="To produce"
+            parent="sale.sale_menu_root"
+            sequence="3" groups="mrp_production_request.group_mrp_production_request_user"/>
+
+        <menuitem id="menu_production_request"
+            action="mrp_production_request.mrp_production_request_action"
+            parent="sale_mrp_production_request.menu_to_produce"
+            sequence="1"/>
 </odoo>
