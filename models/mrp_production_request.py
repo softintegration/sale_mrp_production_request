@@ -12,8 +12,8 @@ class MrpProductionRequest(models.Model):
     partner_id = fields.Many2one('res.partner', string='Customer',related='sale_id.partner_id',readonly=True,store=True,index=True)
     client_order_ref = fields.Char(string='Customer Reference', related='sale_id.client_order_ref',readonly=True)
 
-    def _prepare_singleton_mrp_production(self, quantity=False, product_uom_id=False):
-        res = super(MrpProductionRequest,self)._prepare_singleton_mrp_production(quantity=quantity,product_uom_id=product_uom_id)
+    def _prepare_mrp_production(self, quantity=False, product_uom_id=False):
+        res = super(MrpProductionRequest,self)._prepare_mrp_production(quantity=quantity,product_uom_id=product_uom_id)
         if not self._module_si_sale_mrp_installed():
             return res
         # In the case of si_sale_mrp is installed,we have to set the necessary links between source Sale orders and created Production orders

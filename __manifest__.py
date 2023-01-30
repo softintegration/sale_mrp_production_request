@@ -10,7 +10,7 @@
     'qweb': [],
     'description': False,
     'images': [],
-    'version': '1.0.1.13',
+    'version': '1.0.1.14',
     'category': 'Sale/Manufacturing',
     'demo': [],
     'depends': ['sale_order_line_form_button_box','mrp_production_request'],
