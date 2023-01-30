@@ -17,7 +17,10 @@ class SaleOrderLine(models.Model):
     def _compute_qty_to_plan(self):
         for each in self:
             # Convert the quantity to the sale order line quantity
-            planned_quantity = sum(pr.product_uom_id._compute_quantity(pr.quantity, each.product_uom) for pr in
+            if isinstance(each.production_request_ids.id, models.NewId):
+                planned_quantity = 0.0
+            else:
+                planned_quantity = sum(pr.product_uom_id._compute_quantity(pr.quantity, each.product_uom) for pr in
                                    each.production_request_ids.filtered(lambda pr: pr.state not in ('cancel', 'draft')))
             each.qty_to_plan = each.product_uom_qty - planned_quantity
 
