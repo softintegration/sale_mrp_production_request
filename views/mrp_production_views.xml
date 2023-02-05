@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="mrp_production_form_view_inherited" model="ir.ui.view">
+            <field name="name">mrp.production.form.view.inherited</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='miscellaneous']" position="before">
+                    <page string="Sale orders" name="sale_order_ids">
+                        <field name="sale_order_ids" readonly="1">
+                            <tree>
+                                <field name="state" invisible="1"/>
+                                <field name="name"/>
+                                <field name="client_order_ref"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mrp_production_tree_view_inherited" model="ir.ui.view">
+            <field name="name">mrp.production.tree.view.inherited</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="before">
+                    <field name="sale_order_ids" readonly="1" widget="many2many_tags"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_mrp_production_filter_inherited" model="ir.ui.view">
+            <field name="name">view.mrp.production.filter.inherited</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.view_mrp_production_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="before">
+                    <field name="sale_order_ids"/>
+                </xpath>
+                <xpath expr="//filter[@name='status']" position="after">
+                    <filter string="Sale orders" name="sale_order_ids" domain="[]" context="{'group_by': 'sale_order_ids'}"/>
+                </xpath>
+            </field>
+        </record>
+
+</odoo>
