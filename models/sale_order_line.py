@@ -28,7 +28,7 @@ class SaleOrderLine(models.Model):
         for each in self:
             each.can_create_production_request = each.order_id.state in (
             'sale', 'done') and each.product_id.type == 'product' and float_compare(
-                each.qty_to_plan, 0.0, precision_rounding=each.product_uom.rounding) >= 0
+                each.qty_to_plan, 0.0, precision_rounding=each.product_uom.rounding) > 0
 
     @api.depends('production_request_ids')
     def _compute_production_request_ids(self):
