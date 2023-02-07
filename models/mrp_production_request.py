@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- 
 
 from odoo import models, fields, api, _
-from odoo.exceptions import UserError
+from odoo.exceptions import ValidationError
 
 
 class MrpProductionRequest(models.Model):
@@ -16,9 +16,13 @@ class MrpProductionRequest(models.Model):
         res = super(MrpProductionRequest,self)._prepare_mrp_production(quantity=quantity,product_uom_id=product_uom_id)
         if not self._module_si_sale_mrp_installed():
             return res
-        # In the case of si_sale_mrp is installed,we have to set the necessary links between source Sale orders and created Production orders
+        # In the case of si_sale_mrp is installed,we have to set the necessary links between source Sale orders and created Production
+        # TODO: is this rule correct? we have to check later
+        # all the generated manufacturing orders must be for the same partner
+        partner_id = self.mapped("partner_id")
+        if len(partner_id) > 1:
+            raise ValidationError(_("Can not create Manufacturing order for different partners!"))
         res.update({
-                'sale_id':self.sale_id and self.sale_id.id,
                 'partner_id': self.partner_id and self.partner_id.id
             })
         return res
