@@ -30,13 +30,14 @@ class ProductionRequestsCreate(models.TransientModel):
             if not item.date_desired:
                 raise ValidationError(_('Desired Date is required!'))
             production_requests_dict_list.append(self._prepare_production_request(item))
+        return self._create_production_request(production_requests_dict_list)
+
+    def _create_production_request(self,production_requests_dict_list):
         production_requests = self.env['mrp.production.request'].create(production_requests_dict_list)
         # TODO:we have to check again if this is good approach
         for req in production_requests:
             req._onchange_product_id()
         production_requests.action_make_waiting()
-
-
 
 
     def _prepare_production_request(self,item):

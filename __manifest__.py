@@ -10,7 +10,7 @@
     'qweb': [],
     'description': False,
     'images': [],
-    'version': '1.0.1.19',
+    'version': '1.0.1.20',
     'category': 'Sale/Manufacturing',
     'demo': [],
     'depends': ['sale_order_line_form_button_box','mrp_production_request'],
@@ -19,6 +19,7 @@
         'views/sale_views.xml',
         'views/mrp_production_request_views.xml',
         'views/mrp_production_views.xml',
+        'views/res_config_settings_views.xml',
         'wizard/production_requests_create_views.xml'
     ],
     'license': 'LGPL-3',
