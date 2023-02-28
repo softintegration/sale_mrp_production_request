@@ -20,9 +20,18 @@ class SaleOrderLine(models.Model):
                 planned_quantity = sum(pr.product_uom_id._compute_quantity(pr.quantity, each.product_uom) for pr in
                                        each.production_request_ids.filtered(
                                            lambda pr: pr.state not in ('cancel', 'draft')))
+                # we have to calculate the qty that will never be produced in done production_request_ids
+                done_planned_quantity = sum(pr.product_uom_id._compute_quantity(pr.quantity, each.product_uom) for pr in
+                                       each.production_request_ids.filtered(
+                                           lambda pr: pr.state in ('done',)))
+                done_quantity_produced = sum(pr.product_uom_id._compute_quantity(pr.quantity_produced, each.product_uom) for pr in
+                                       each.production_request_ids.filtered(
+                                           lambda pr: pr.state in ('done',)))
+
+
             else:
                 planned_quantity = 0.0
-            each.qty_to_plan = each.product_uom_qty - planned_quantity
+            each.qty_to_plan = each.product_uom_qty - planned_quantity +(done_planned_quantity-done_quantity_produced)
 
     def _can_create_production_request(self):
         for each in self:
