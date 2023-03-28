@@ -16,6 +16,7 @@ class SaleOrderLine(models.Model):
     @api.depends('production_request_ids')
     def _compute_qty_to_plan(self):
         for each in self:
+            planned_quantity,done_planned_quantity,done_quantity_produced = 0,0,0
             if len(each.production_request_ids) > 1 or not isinstance(each.production_request_ids.id, models.NewId):
                 planned_quantity = sum(pr.product_uom_id._compute_quantity(pr.quantity, each.product_uom) for pr in
                                        each.production_request_ids.filtered(
@@ -27,10 +28,6 @@ class SaleOrderLine(models.Model):
                 done_quantity_produced = sum(pr.product_uom_id._compute_quantity(pr.quantity_produced, each.product_uom) for pr in
                                        each.production_request_ids.filtered(
                                            lambda pr: pr.state in ('done',)))
-
-
-            else:
-                planned_quantity = 0.0
             each.qty_to_plan = each.product_uom_qty - planned_quantity +(done_planned_quantity-done_quantity_produced)
 
     def _can_create_production_request(self):
