@@ -26,6 +26,7 @@ class MrpProduction(models.Model):
 
 class MrpProductionSaleOrder(models.Model):
     _name = 'mrp.production.sale.order'
+    _order = 'sequence, id'
 
     mrp_production_id = fields.Many2one('mrp.production',string='Manufacturing',required=True)
     sale_order_id = fields.Many2one('sale.order',string='name',required=True)
