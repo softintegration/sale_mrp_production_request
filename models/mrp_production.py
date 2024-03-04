@@ -29,9 +29,12 @@ class MrpProductionSaleOrder(models.Model):
 
     mrp_production_id = fields.Many2one('mrp.production',string='Manufacturing',required=True)
     sale_order_id = fields.Many2one('sale.order',string='name',required=True)
-    state = fields.Selection(related='sale_order_id.state')
+    state = fields.Selection(related='mrp_production_id.state')
     client_order_ref = fields.Char(related='sale_order_id.client_order_ref')
     sequence = fields.Integer(help='Used to order Sale orders', default=10,)
+    qty_producing_allocated = fields.Float(string="Allocated Quantity Producing",
+        default=0.0, digits='Product Unit of Measure', required=False, tracking=True,readonly=False,
+        states={'done': [('readonly', True)],'cancel': [('readonly', True)]})
 
 
 

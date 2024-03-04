@@ -23,6 +23,7 @@
                                 <field name="sequence" widget="handle"/>
                                 <field name="sale_order_id" readonly="1"/>
                                 <field name="client_order_ref" readonly="1"/>
+                                <field name="qty_producing_allocated" />
                             </tree>
                         </field>
                     </page>
