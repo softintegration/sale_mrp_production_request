@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-18 12:45+0000\n"
-"PO-Revision-Date: 2023-02-18 12:45+0000\n"
+"POT-Creation-Date: 2024-03-04 11:09+0000\n"
+"PO-Revision-Date: 2024-03-04 11:09+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -75,12 +75,14 @@ msgid "Create Production Requests"
 msgstr "Créer une demande de fabrication"
 
 #. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_sale_order__create_uid
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create__create_uid
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create_item__create_uid
 msgid "Created by"
 msgstr ""
 
 #. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_sale_order__create_date
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create__create_date
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create_item__create_date
 msgid "Created on"
@@ -94,6 +96,7 @@ msgstr "Client"
 
 #. module: sale_mrp_production_request
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_request__client_order_ref
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_sale_order__client_order_ref
 msgid "Customer Reference"
 msgstr "Référence commande client"
 
@@ -109,12 +112,14 @@ msgid "Desired Date is required!"
 msgstr "Date souhaitée obligatoire!"
 
 #. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_sale_order__display_name
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create__display_name
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create_item__display_name
 msgid "Display Name"
 msgstr "Nom à afficher"
 
 #. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_sale_order__id
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create__id
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create_item__id
 msgid "ID"
@@ -126,24 +131,28 @@ msgid "Item"
 msgstr ""
 
 #. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_sale_order____last_update
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create____last_update
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create_item____last_update
 msgid "Last Modified on"
 msgstr ""
 
 #. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_sale_order__write_uid
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create__write_uid
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create_item__write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_sale_order__write_date
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create__write_date
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create_item__write_date
 msgid "Last Updated on"
 msgstr ""
 
 #. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_sale_order__mrp_production_id
 #: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.sale_order_line_view_form_readonly_inherited
 #: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.view_order_form_inherited
 msgid "Manufacturing"
@@ -235,9 +244,19 @@ msgid "Sale Order"
 msgstr "Bon de commande"
 
 #. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production__sale_order_line_ids
+msgid "Sale Order Line"
+msgstr ""
+
+#. module: sale_mrp_production_request
 #: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.mrp_production_form_view_inherited
 #: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.view_mrp_production_filter_inherited
 msgid "Sale orders"
+msgstr "Bons de commande"
+
+#. module: sale_mrp_production_request
+#: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.mrp_production_form_view_inherited
+msgid "Sale orders lines"
 msgstr "Bons de commande"
 
 #. module: sale_mrp_production_request
@@ -256,6 +275,16 @@ msgid "Sales order"
 msgstr "Bon de commande"
 
 #. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_sale_order__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_sale_order__state
+msgid "Status"
+msgstr ""
+
+#. module: sale_mrp_production_request
 #: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.view_order_form_inherited
 msgid "Still to plan"
 msgstr "Reste à planifier"
@@ -264,6 +293,21 @@ msgstr "Reste à planifier"
 #: model:ir.ui.menu,name:sale_mrp_production_request.menu_to_produce
 msgid "To produce"
 msgstr "À fabriquer"
+
+#. module: sale_mrp_production_request
+#: model:ir.model.fields,help:sale_mrp_production_request.field_mrp_production_sale_order__sequence
+msgid "Used to order Sale orders"
+msgstr ""
+
+#. module: sale_mrp_production_request
+#: model:ir.model,name:sale_mrp_production_request.model_mrp_production_sale_order
+msgid "mrp.production.sale.order"
+msgstr ""
+
+#. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_sale_order__sale_order_id
+msgid "name"
+msgstr "Référence commande"
 
 #. module: sale_mrp_production_request
 #: model:ir.model,name:sale_mrp_production_request.model_production_requests_create
