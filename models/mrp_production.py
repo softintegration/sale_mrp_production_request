@@ -28,7 +28,7 @@ class MrpProductionSaleOrder(models.Model):
     _name = 'mrp.production.sale.order'
     _order = 'sequence, id'
 
-    mrp_production_id = fields.Many2one('mrp.production',string='Manufacturing',required=True)
+    mrp_production_id = fields.Many2one('mrp.production',string='Manufacturing',required=True,ondelete='cascade')
     sale_order_id = fields.Many2one('sale.order',string='name',required=True)
     state = fields.Selection(related='mrp_production_id.state')
     client_order_ref = fields.Char(related='sale_order_id.client_order_ref')
