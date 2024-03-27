@@ -6,14 +6,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 11:37+0000\n"
-"PO-Revision-Date: 2024-03-04 11:37+0000\n"
+"POT-Creation-Date: 2024-03-27 10:21+0000\n"
+"PO-Revision-Date: 2024-03-27 10:21+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: sale_mrp_production_request
+#: model:ir.model.fields,help:sale_mrp_production_request.field_mrp_production_sale_order__state
+msgid ""
+" * Draft: The MO is not confirmed yet.\n"
+" * Confirmed: The MO is confirmed, the stock rules and the reordering of the components are trigerred.\n"
+" * In Progress: The production has started (on the MO or on the WO).\n"
+" * To Close: The production is done, the MO has to be closed.\n"
+" * Done: The MO is closed, the stock moves are posted. \n"
+" * Cancelled: The MO has been cancelled, can't be confirmed anymore."
+msgstr ""
 
 #. module: sale_mrp_production_request
 #: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.sale_order_line_view_form_readonly_inherited
@@ -64,6 +75,11 @@ msgstr "Cocher"
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create__check_all
 msgid "Check all"
 msgstr "Sélectionner tout"
+
+#. module: sale_mrp_production_request
+#: model:ir.model,name:sale_mrp_production_request.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de config"
 
 #. module: sale_mrp_production_request
 #: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.view_production_requests_create
@@ -237,6 +253,17 @@ msgid "Request"
 msgstr "Demande de fabrication"
 
 #. module: sale_mrp_production_request
+#: model:ir.model.fields,field_description:sale_mrp_production_request.field_res_config_settings__module_stock_picking_reserve_restrict_lot
+msgid "Reserve only Sale order origin lots"
+msgstr "Réservation restreinte des N° lot sur un Bon de livraison"
+
+#. module: sale_mrp_production_request
+#: model:ir.model.fields,help:sale_mrp_production_request.field_res_config_settings__module_stock_picking_reserve_restrict_lot
+#: model_terms:ir.ui.view,arch_db:sale_mrp_production_request.res_config_settings_view_form_stock
+msgid "Reserve only the Lot/serials related to the Sale order origin."
+msgstr "Dans le bon de livraison,restreindre la réservation aux N° lot fabriqués par un OF lié au Bon de commande source"
+
+#. module: sale_mrp_production_request
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_request__sale_line_id
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_production_requests_create_item__sale_line_id
 msgid "Sale Line"
@@ -286,7 +313,7 @@ msgstr ""
 
 #. module: sale_mrp_production_request
 #: model:ir.model.fields,field_description:sale_mrp_production_request.field_mrp_production_sale_order__state
-msgid "Status"
+msgid "State"
 msgstr ""
 
 #. module: sale_mrp_production_request
